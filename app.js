@@ -36,11 +36,17 @@ function displayExpenses() {
         listItem.className = "list-group-item d-flex justify-content-between align-items-center";
         listItem.innerHTML = `
             ${expense.name} - ₹${expense.amount}
+            <button class="btn btn-warning btn-sm" data-index="${index}">Edit</button>
             <button class="btn btn-danger btn-sm" data-index="${index}">Delete</button>
         `;
 
+        // Add a click event to edit expenses
+        listItem.querySelector("button.btn-warning").addEventListener("click", function () {
+            editExpense(index);
+        });
+
         // Add a click event to delete expenses
-        listItem.querySelector("button").addEventListener("click", function () {
+        listItem.querySelector("button.btn-danger").addEventListener("click", function () {
             removeExpense(index);
         });
 
@@ -57,4 +63,18 @@ function removeExpense(index) {
     localStorage.setItem("expenses", JSON.stringify(expenses));
     displayExpenses();
 }
+
+function editExpense(index) {
+    let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+    const editedExpense = expenses[index];
+    const newName = prompt("Edit expense name:", editedExpense.name);
+    const newAmount = parseFloat(prompt("Edit expense amount:", editedExpense.amount));
+
+    if (newName && !isNaN(newAmount)) {
+        expenses[index] = { name: newName, amount: newAmount };
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+        displayExpenses();
+    }
+}
+
 
