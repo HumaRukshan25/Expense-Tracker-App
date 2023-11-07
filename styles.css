@@ -1,0 +1,55 @@
+body {
+    background-image: url('expense.webp'); /* Replace 'your-image-url.jpg' with your image file path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; /* Center the image horizontally and vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black overlay */
+    color: rgb(22, 22, 22); /* Set text color to white for better visibility */
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+    margin-left:200px;
+    margin-right:200px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.7); /* Add a semi-transparent white background to the container */
+    padding: 20px;
+    border-radius: 10px; /* Round the corners of the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow to the container */
+    margin-top: 70px;
+    
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 10px;
+    color:black;
+    
+}
+
+.btn {
+    background-color:rgba(103, 34, 34, 0.798); /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgba(125, 82, 82, 0.37); /* Button background color on hover */
+}
+
+.list-group {
+    margin-top: 10px;
+}
+
+#totalExpenses {
+    text-align: center;
+    font-size: 18px;
+}
+
+#totalAmount {
+    font-weight: bold;
+}
